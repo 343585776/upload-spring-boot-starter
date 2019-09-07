@@ -14,6 +14,14 @@
 </dependency>
 ```
 
+### 注意事项
+
+因为提供了通用的上传Controller,所以要确保该Controller能够被SpringBoot正确扫描到。
+
+SpringBoot默认扫描方式是从Application启动类所在包向下扫描,如果Application启动类所在层级较深，则需要设置扫描路径。
+
+通用Controller所在包为`me.sdevil507.upload`下面,
+
 ### 本地存储配置
 
 启动器提供了`AbstractUploadFileHandler`的子类`LocalUploadFileHandler`实现本地保存上传文件
