@@ -18,9 +18,19 @@
 
 因为提供了通用的上传Controller,所以要确保该Controller能够被SpringBoot正确扫描到。
 
-SpringBoot默认扫描方式是从Application启动类所在包向下扫描,如果Application启动类所在层级较深，则需要设置扫描路径。
+SpringBoot默认扫描方式是从Application启动类所在包向下扫描,如果Application启动类所在层级较深，则需要使用`@ComponentScan`设置扫描路径。
 
-通用Controller所在包为`me.sdevil507.upload`下面,
+通用Controller所在包为`me.sdevil507.upload`下面,如果需要设置扫描路径,参考如下:
+
+```java
+@SpringBootApplication
+@ComponentScan(value = "me.sdevil507.upload")
+public class DemoApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+}
+```
 
 ### 本地存储配置
 
