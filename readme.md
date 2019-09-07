@@ -130,3 +130,72 @@ public class QiNiuUploadFileHandler extends AbstractUploadFileHandler {
 
 ### 单元测试示例
 
+```java
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@AutoConfigureMockMvc
+@ComponentScan(value = "me.sdevil507.upload")
+public class DemoApplicationTests {
+    
+    @Autowired
+    private MockMvc mvc;
+
+    /**
+     * 测试单文件上传
+     */
+    @Test
+    public void singleUpload() {
+        try {
+            // 获取文件
+            File file = ResourceUtils.getFile("classpath:files/test.jpg");
+            // 封装inputStream
+            FileInputStream fileInputStream = new FileInputStream(file);
+            // 构建mock上传文件对象
+            MockMultipartFile mockMultipartFile = new MockMultipartFile("file", file.getName(), "multipart/form-data", fileInputStream);
+            // 执行上传操作
+            MvcResult result = mvc.perform(MockMvcRequestBuilders.fileUpload("/file/upload/single")
+                    .file(mockMultipartFile)
+            ).andExpect(MockMvcResultMatchers.status().isOk())
+                    .andReturn();
+            // 获取返回结果
+            String resultStrings = result.getResponse().getContentAsString();
+            System.out.println(resultStrings);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 测试多文件上传
+     */
+    @Test
+    public void multipleUpload() {
+        try {
+            // 获取文件
+            File file1 = ResourceUtils.getFile("classpath:files/test.jpg");
+            File file2 = ResourceUtils.getFile("classpath:files/test.png");
+            File file3 = ResourceUtils.getFile("classpath:files/test.xlsx");
+            // 封装inputStream
+            FileInputStream fileInputStream1 = new FileInputStream(file1);
+            FileInputStream fileInputStream2 = new FileInputStream(file2);
+            FileInputStream fileInputStream3 = new FileInputStream(file3);
+            // 构建mock上传文件对象
+            MockMultipartFile mockMultipartFile1 = new MockMultipartFile("files", file1.getName(), "multipart/form-data", fileInputStream1);
+            MockMultipartFile mockMultipartFile2 = new MockMultipartFile("files", file2.getName(), "multipart/form-data", fileInputStream2);
+            MockMultipartFile mockMultipartFile3 = new MockMultipartFile("files", file3.getName(), "multipart/form-data", fileInputStream3);
+            // 执行上传操作
+            MvcResult result = mvc.perform(MockMvcRequestBuilders.fileUpload("/file/upload/multiple")
+                    .file(mockMultipartFile1)
+                    .file(mockMultipartFile2)
+                    .file(mockMultipartFile3)
+            ).andExpect(MockMvcResultMatchers.status().isOk())
+                    .andReturn();
+            // 获取返回结果
+            String resultStrings = result.getResponse().getContentAsString();
+            System.out.println(resultStrings);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
