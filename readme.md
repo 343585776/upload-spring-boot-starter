@@ -17,11 +17,11 @@
 
 ### 文件上传地址
 
-单文件上传:
+**单文件上传:**
 
 `http(s)://ip:port/file/upload/single`
 
-多文件上传:
+**多文件上传:**
 
 `http(s)://ip:port/file/upload/multiple`
 
@@ -47,7 +47,9 @@ public class DemoApplication {
 
 启动器提供了`AbstractUploadFileHandler`的子类`LocalUploadFileHandler`实现本地保存上传文件
 
-如果使用本地保存文件，则可以直接按照如下设置直接进行使用：
+如果使用本地保存文件，则可以直接按照如下设置直接进行使用。
+
+**配置如下:**
 
 ```yml
 spring:
@@ -57,8 +59,8 @@ spring:
 
 file:
   upload:
-    # 如果设置了该属性,则默认使用本地文件保存方案
-    local-save-path: /Users/sdevil507/Downloads/upload
+    # 如果设置了该属性,则默认使用本地文件保存方案(绝对路径)
+    local-save-path: /Users/sdevil507/upload_files
     # 针对上传文件类型进行控制(不设置默认全部支持)
     include-extensions: png,jpg
 ```
@@ -69,16 +71,18 @@ file:
 
 云存储方案需要在各自项目中继承`AbstractUploadFileHandler`抽象类,实现save()方法。但是仍然可以使用文件类型真实检测控制。
 
-配置如下:
+**配置如下:**
 
 ```yml
 file:
   upload:
+    # 不需要设置本地保存绝对地址
+    # local-save-path: /Users/sdevil507/upload_files
     # 针对上传文件类型进行控制(不设置默认全部支持)
     include-extensions: png,jpg
 ```
 
-七牛云存储保存demo:
+**七牛云存储保存demo:**
 
 ```java
 /**
@@ -123,3 +127,6 @@ public class QiNiuUploadFileHandler extends AbstractUploadFileHandler {
     }
 }
 ```
+
+### 单元测试示例
+
