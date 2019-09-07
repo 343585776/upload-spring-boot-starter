@@ -3,6 +3,7 @@
 1. 该启动器支持单文件与多文件的上传操作
 2. 支持文件存储本地(默认)
 3. 支持拓展使用云存储
+4. 支持通过检测真实文件内容从而控制上传文件类型(防止更改后缀名进行伪造)
 
 ### 引入starter
 
@@ -13,6 +14,16 @@
     <version>1.0.0</version>
 </dependency>
 ```
+
+### 文件上传地址
+
+单文件上传:
+
+http(s)://ip:port/file/upload/single
+
+多文件上传:
+
+http(s)://ip:port/file/upload/multiple
 
 ### 注意事项
 
@@ -36,3 +47,18 @@ public class DemoApplication {
 
 启动器提供了`AbstractUploadFileHandler`的子类`LocalUploadFileHandler`实现本地保存上传文件
 
+如果使用本地保存文件，则可以直接按照如下设置直接进行使用：
+
+```yml
+spring:
+  resources:
+    # 设置上传文件本地服务器地址,可对外提供访问(http(s)://ip:port/xxx.jpg)
+    static-locations: file:${file.upload.local-save-path}
+
+file:
+  upload:
+    # 如果设置了该属性,则默认使用本地文件保存方案
+    local-save-path: /Users/sdevil507/Downloads/upload
+    # 针对上传文件类型进行控制
+    include-extensions: png,jpg
+```
