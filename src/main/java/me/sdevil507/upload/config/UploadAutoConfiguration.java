@@ -1,5 +1,6 @@
 package me.sdevil507.upload.config;
 
+import me.sdevil507.upload.controller.UploadController;
 import me.sdevil507.upload.helper.FileDetectionHelper;
 import me.sdevil507.upload.properties.UploadProperties;
 import me.sdevil507.upload.service.AbstractUploadFileHandler;
@@ -40,5 +41,15 @@ public class UploadAutoConfiguration {
     @ConditionalOnProperty(prefix = "file.upload", name = {"local-save-path"})
     public AbstractUploadFileHandler abstractUploadFileHandler(UploadProperties uploadProperties) {
         return new LocalUploadFileHandler(fileDetectionHelper(uploadProperties), uploadProperties);
+    }
+
+    /**
+     * 创建通用上传的Controller给调用者调用
+     *
+     * @return 上传Controller
+     */
+    @Bean
+    public UploadController uploadController() {
+        return new UploadController();
     }
 }

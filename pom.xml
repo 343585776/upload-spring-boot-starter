@@ -10,7 +10,7 @@
     </parent>
     <groupId>me.sdevil507</groupId>
     <artifactId>upload-spring-boot-starter</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <name>upload-spring-boot-starter</name>
     <description>通用SpringMvc上传场景启动器</description>
 
