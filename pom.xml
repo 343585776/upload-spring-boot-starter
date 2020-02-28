@@ -5,12 +5,12 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.8.RELEASE</version>
+        <version>2.2.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>me.sdevil507</groupId>
     <artifactId>upload-spring-boot-starter</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <name>upload-spring-boot-starter</name>
     <description>通用SpringMvc上传场景启动器</description>
 
