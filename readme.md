@@ -31,7 +31,7 @@
 
 SpringBoot默认扫描方式是从Application启动类所在包向下扫描,如果Application启动类所在层级较深，则需要使用`@ComponentScan`设置扫描路径。
 
-如果设置了@ComponentScan后,会替换SpringBoot默认的扫描包路径,所以需要将项目的原包路经添加到注解后边以逗号分隔,类似:
+如果设置了`@ComponentScan`后,会替换SpringBoot默认的扫描包路径,所以需要将项目的原包路经添加到注解后边以逗号分隔,类似:
 
 @ComponentScan(value="{me.sdevil507.upload,xxx.xxx}")
 
