@@ -11,7 +11,7 @@
 <dependency>
     <groupId>me.sdevil507</groupId>
     <artifactId>upload-spring-boot-starter</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
 </dependency>
 ```
 
@@ -25,7 +25,7 @@
 
 `http(s)://ip:port/file/upload/multiple`
 
-### 注意事项
+### 注意事项(只针对1.2.0以下版本,1.2.0及以上版本可自动发现!)
 
 因为提供了通用的上传Controller,所以要确保该Controller能够被SpringBoot正确扫描到。
 
