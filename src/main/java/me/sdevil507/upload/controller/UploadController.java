@@ -1,8 +1,8 @@
 package me.sdevil507.upload.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import me.sdevil507.result.ApiResultDTO;
-import me.sdevil507.result.ApiResultGenerator;
+import me.sdevil507.supports.result.ApiResultDTO;
+import me.sdevil507.supports.result.ApiResultGenerator;
 import me.sdevil507.upload.dto.FileUploadResultDTO;
 import me.sdevil507.upload.exceptions.FileTypeCanNotSupportException;
 import me.sdevil507.upload.service.AbstractUploadFileHandler;
