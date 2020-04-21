@@ -1,4 +1,4 @@
-package me.sdevil507.upload.controller;
+package me.sdevil507.supports.upload.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 

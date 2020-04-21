@@ -1,11 +1,11 @@
-package me.sdevil507.upload.controller;
+package me.sdevil507.supports.upload.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import me.sdevil507.supports.result.ApiResultDTO;
 import me.sdevil507.supports.result.ApiResultGenerator;
-import me.sdevil507.upload.dto.FileUploadResultDTO;
-import me.sdevil507.upload.exceptions.FileTypeCanNotSupportException;
-import me.sdevil507.upload.service.AbstractUploadFileHandler;
+import me.sdevil507.supports.upload.dto.FileUploadResultDTO;
+import me.sdevil507.supports.upload.exceptions.FileTypeCanNotSupportException;
+import me.sdevil507.supports.upload.service.AbstractUploadFileHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,7 +21,7 @@ import java.util.List;
  *
  * @author sdevil507
  */
-@RequestMapping("/file/upload")
+@RequestMapping("/supports/upload")
 @Slf4j
 public class UploadController extends BaseMarkController {
 

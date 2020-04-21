@@ -1,4 +1,4 @@
-package me.sdevil507.upload.properties;
+package me.sdevil507.supports.upload.properties;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

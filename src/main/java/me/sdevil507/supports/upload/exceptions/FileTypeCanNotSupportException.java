@@ -1,4 +1,4 @@
-package me.sdevil507.upload.exceptions;
+package me.sdevil507.supports.upload.exceptions;
 
 /**
  * 自定义文件类型不支持异常

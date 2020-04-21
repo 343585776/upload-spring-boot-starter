@@ -1,7 +1,7 @@
-package me.sdevil507.upload.helper;
+package me.sdevil507.supports.upload.helper;
 
 import lombok.extern.slf4j.Slf4j;
-import me.sdevil507.upload.properties.UploadProperties;
+import me.sdevil507.supports.upload.properties.UploadProperties;
 import org.apache.tika.Tika;
 import org.apache.tika.mime.MimeType;
 import org.apache.tika.mime.MimeTypeException;

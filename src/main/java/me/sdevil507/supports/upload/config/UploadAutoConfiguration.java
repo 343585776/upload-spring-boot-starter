@@ -1,10 +1,10 @@
-package me.sdevil507.upload.config;
+package me.sdevil507.supports.upload.config;
 
-import me.sdevil507.upload.controller.UploadController;
-import me.sdevil507.upload.helper.FileDetectionHelper;
-import me.sdevil507.upload.properties.UploadProperties;
-import me.sdevil507.upload.service.AbstractUploadFileHandler;
-import me.sdevil507.upload.service.impl.LocalUploadFileHandler;
+import me.sdevil507.supports.upload.helper.FileDetectionHelper;
+import me.sdevil507.supports.upload.properties.UploadProperties;
+import me.sdevil507.supports.upload.service.AbstractUploadFileHandler;
+import me.sdevil507.supports.upload.service.impl.LocalUploadFileHandler;
+import me.sdevil507.supports.upload.controller.UploadController;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;

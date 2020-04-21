@@ -1,9 +1,9 @@
-package me.sdevil507.upload.service.impl;
+package me.sdevil507.supports.upload.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
-import me.sdevil507.upload.helper.FileDetectionHelper;
-import me.sdevil507.upload.properties.UploadProperties;
-import me.sdevil507.upload.service.AbstractUploadFileHandler;
+import me.sdevil507.supports.upload.helper.FileDetectionHelper;
+import me.sdevil507.supports.upload.properties.UploadProperties;
+import me.sdevil507.supports.upload.service.AbstractUploadFileHandler;
 import org.springframework.util.FileCopyUtils;
 
 import java.io.File;

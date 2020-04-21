@@ -1,4 +1,4 @@
-package me.sdevil507.upload.dto;
+package me.sdevil507.supports.upload.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

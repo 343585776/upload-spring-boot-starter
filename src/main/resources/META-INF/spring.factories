@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-me.sdevil507.upload.config.UploadAutoConfiguration
+me.sdevil507.supports.upload.config.UploadAutoConfiguration

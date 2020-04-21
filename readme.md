@@ -19,11 +19,11 @@
 
 **单文件上传:**
 
-`http(s)://ip:port/file/upload/single`
+`http(s)://ip:port/supports/upload/single`
 
 **多文件上传:**
 
-`http(s)://ip:port/file/upload/multiple`
+`http(s)://ip:port/supports/upload/multiple`
 
 ### 注意事项(只针对1.2.0以下版本,1.2.0及以上版本可自动发现!)
 
@@ -33,13 +33,13 @@ SpringBoot默认扫描方式是从Application启动类所在包向下扫描,如�
 
 如果设置了`@ComponentScan`后,会替换SpringBoot默认的扫描包路径,所以需要将项目的原包路经添加到注解后边以逗号分隔,类似:
 
-@ComponentScan({"me.sdevil507.upload","xxx.xxx"})
+@ComponentScan({"me.sdevil507.supports.upload","xxx.xxx"})
 
-通用Controller所在包为`me.sdevil507.upload`下面,如果需要设置扫描路径,参考如下:
+通用Controller所在包为`me.sdevil507.supports.upload`下面,如果需要设置扫描路径,参考如下:
 
 ```java
 @SpringBootApplication
-@ComponentScan({"me.sdevil507.upload"})
+@ComponentScan({"me.sdevil507.supports.upload"})
 public class DemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);

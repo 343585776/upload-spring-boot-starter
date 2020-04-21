@@ -1,8 +1,8 @@
-package me.sdevil507.upload.service;
+package me.sdevil507.supports.upload.service;
 
 import lombok.extern.slf4j.Slf4j;
-import me.sdevil507.upload.exceptions.FileTypeCanNotSupportException;
-import me.sdevil507.upload.helper.FileDetectionHelper;
+import me.sdevil507.supports.upload.exceptions.FileTypeCanNotSupportException;
+import me.sdevil507.supports.upload.helper.FileDetectionHelper;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
