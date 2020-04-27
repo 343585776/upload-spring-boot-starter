@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * 阿里云短信通道自动暴露配置
+ * 文件上传场景启动器自动发现配置
  *
  * @author sdevil507
  */
